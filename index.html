@@ -171,8 +171,8 @@ transform:translate(-50%,-50%);
 
 <br><br>
 
-<button id="next" style="display:none;">
-Продолжить путешествие ✨
+<button id="next" onclick="nextPage()">
+    Продолжить путешествие ✨
 </button>
 
 </div>
@@ -262,6 +262,33 @@ const text=`Привет, Mr. K.
 
 Каждое слово здесь написано сердцем.`;
 
+const pages = [
+
+`Если ты сейчас читаешь это...
+
+значит ты уже стал частью моего маленького космоса.
+
+Каждый день рядом с тобой для меня — маленькое чудо.`,
+
+`Я хочу, чтобы однажды...
+
+мы открыли этот сайт вместе.
+
+И улыбнулись, вспоминая этот момент.`,
+
+`Спасибо тебе...
+
+за улыбку.
+
+За поддержку.
+
+За то, что ты просто есть.`,
+
+`Но это только начало нашего путешествия ❤️`
+
+];
+
+let currentPage = 0;
 function typeWriter(text,element,speed=45){
 
 let i=0;
@@ -298,6 +325,31 @@ write();
 
 }
 </script>
+function nextPage(){
 
+    currentPage++;
+
+    if(currentPage < pages.length){
+
+        typeWriter(pages[currentPage], typing);
+
+    }else{
+
+        typing.innerHTML = `
+        <h2>✨ Конец первой главы ✨</h2>
+
+        <br>
+
+        <p>
+        Продолжение будет ещё красивее...
+        </p>
+        `;
+
+        next.style.display="none";
+next.style.display="inline-block";
+    }
+
+}
+}
 </body>
 </html>
