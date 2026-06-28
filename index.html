@@ -144,15 +144,15 @@ transform:translate(-50%,-50%);
 
 <div id="content">
 
-<h1>❤️ Добро пожаловать...</h1>
+<h1 id="title"></h1>
 
-<p>
+<p id="typing"></p>
 
-Ты нашёл место,
+<br><br>
 
-которое существует только для тебя.
-
-</p>
+<button id="next" style="display:none;">
+Продолжить путешествие ✨
+</button>
 
 </div>
 
@@ -169,7 +169,7 @@ if(p===password){
 document.getElementById("login").style.display="none";
 
 document.getElementById("content").style.display="block";
-
+typeWriter(text,typing);
 }else{
 
 alert("Неверный пароль ❤️");
@@ -225,7 +225,57 @@ requestAnimationFrame(draw);
 }
 
 draw();
+const title=document.getElementById("title");
+const typing=document.getElementById("typing");
+const next=document.getElementById("next");
 
+const text=`Привет, Mr. K.
+
+Сегодня я хочу показать тебе не сайт.
+
+Я хочу показать тебе мир, в котором живёт моя любовь к тебе.
+
+Не спеши.
+
+Просто читай.
+
+Каждое слово здесь написано сердцем.`;
+
+function typeWriter(text,element,speed=45){
+
+let i=0;
+
+element.innerHTML="";
+
+function write(){
+
+if(i<text.length){
+
+if(text.charAt(i)==="\n"){
+
+element.innerHTML+="<br><br>";
+
+}else{
+
+element.innerHTML+=text.charAt(i);
+
+}
+
+i++;
+
+setTimeout(write,speed);
+
+}else{
+
+next.style.display="inline-block";
+
+}
+
+}
+
+write();
+
+}
 </script>
 
 </body>
