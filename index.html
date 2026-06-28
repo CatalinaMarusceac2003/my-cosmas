@@ -100,42 +100,27 @@ box-shadow:0 0 40px rgba(255,255,255,.5);
 }
 
 #content{
+    display: none;
 
-display:none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-position:relative;
+    width: 700px;
+    max-width: 90%;
 
-margin:80px auto;
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 30px;
 
-top:auto;
+    padding: 50px 60px;
 
-left:auto;
+    color: white;
+    text-align: center;
 
-transform:none;
-
-width:700px;
-
-max-width:90%;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(15px);
-
-border:1px solid rgba(255,255,255,.2);
-
-border-radius:30px;
-
-padding:50px 60px;
-
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:25px;
-  
-color:white;
-text-align:center;
-
-box-shadow:0 0 60px rgba(255,255,255,.08);
+    box-shadow: 0 0 60px rgba(255,255,255,.08);
 
 animation:fade 2s;
 
